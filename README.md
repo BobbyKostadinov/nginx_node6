@@ -1,6 +1,6 @@
 ## Intro
 
-*This image is pushed to the docker hub as bobbykostadinov/nginx_node6*
+**This image is pushed to the docker hub as bobbykostadinov/nginx_node6**
 
 This package creates:
 
@@ -18,13 +18,6 @@ This package creates:
 
 
 ## Docker instructions
-
-
-Create a new Boot2Docker VM.
-
-    $ boot2docker init
-
-This creates a new virtual machine. You only need to run this command once.
 
 To check the running virtual machine use
 
@@ -49,6 +42,19 @@ To start an image with command line and port mapping:
     docker run -d -p 80:80 TAGHERE /bin/bash
 
 To manage repository stored in Docker Hub https://docs.docker.com/mac/step_six/
+
+## Usage
+
+You can use this as base image and add your commands. Example I use for my own app: 
+
+
+    FROM bobbykostadinov/nginx_node6
+    ADD . /srv/www
+    WORKDIR /srv/www
+    RUN npm cache clean | npm install
+    RUN npm build
+    EXPOSE 80
+    CMD ["/sbin/my_init"]
 
 
 ## License
