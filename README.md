@@ -1,6 +1,6 @@
 ## Intro
 
-**This image is pushed to the docker hub as bobbykostadinov/nginx_node6**
+**This Docker image is pushed to the docker hub as bobbykostadinov/nginx_node6**
 
 This package creates:
 
